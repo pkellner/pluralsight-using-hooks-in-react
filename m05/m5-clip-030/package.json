@@ -2,7 +2,7 @@
   "name": "pluralsight-using-hooks-in-react",
   "author": "Peter Kellner",
   "version": "1.0.0",
-  "description": "Using React Hooks in React 18 Course Demo Files",
+  "description": "Using React Hooks in React Course Demo Files",
   "main": "index.js",
   "scripts": {
     "dev": "next dev",
