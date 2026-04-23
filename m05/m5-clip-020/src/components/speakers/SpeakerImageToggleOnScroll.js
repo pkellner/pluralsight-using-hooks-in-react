@@ -16,8 +16,8 @@ export default function SpeakerImageToggleOnScroll({
     setIsLoading(false);
     window.addEventListener("scroll", scrollHandler);
     return () => {
-      window.removeEventListener("scroll", scrollHandler);
-    };
+          window.removeEventListener("scroll", scrollHandler);
+        };
       },
     []);
 
