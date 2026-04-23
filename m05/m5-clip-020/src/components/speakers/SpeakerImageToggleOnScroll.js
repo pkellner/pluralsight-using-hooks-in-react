@@ -1,9 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 
 export default function SpeakerImageToggleOnScroll({
-  imageUrl,
-  alt,
-  thumbNail,
+  imageUrl, alt, thumbNail,
 }) {
   const [inView, setInView] = useState(false);
   const imageRef = useRef(null);
@@ -20,7 +18,8 @@ export default function SpeakerImageToggleOnScroll({
     return () => {
       window.removeEventListener("scroll", scrollHandler);
     };
-  }, []);
+      },
+    []);
 
   function isInView() {
     const rect = imageRef.current.getBoundingClientRect();
