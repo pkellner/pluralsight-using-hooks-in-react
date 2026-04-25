@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, useEffectEvent } from "react";
 
 export default function SpeakerImageToggleOnScroll({
   imageUrl, alt, thumbNail,
@@ -7,6 +7,10 @@ export default function SpeakerImageToggleOnScroll({
   const imageRef = useRef(null);
   const [isLoading, setIsLoading] = useState(true);
 
+  const onScroll = useEffectEvent(() => {
+    setInView(isInView());
+  })
+
   function scrollHandler() {
     setInView(isInView());
   }
@@ -14,6 +18,9 @@ export default function SpeakerImageToggleOnScroll({
   useEffect(() => {
     setInView(isInView());
     setIsLoading(false);
+    function scrollHandler() {
+      onScroll();
+    }
     window.addEventListener("scroll", scrollHandler);
     return () => {
           window.removeEventListener("scroll", scrollHandler);
